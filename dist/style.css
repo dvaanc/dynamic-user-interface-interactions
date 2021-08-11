@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: 'Ubuntu', 'Lobster', 'sans-serif';
+
+}
+nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+  top: 0;
+  height: 60px;
+  width: 100vw;
+  background-color: #C60D0D;
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+
+}
+
+nav ul:first-child {
+  border-left: 3px solid rgba(255, 255, 255, 0.5)
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  border-right: 3px solid rgba(255, 255, 255, 0.5);
+  font-family: var(--font-family);
+  color: rgb(255, 255, 255);
+}
+
+nav li:hover {
+  background-color: #8B0B0B;
+  cursor: pointer;
+}
