@@ -14,8 +14,8 @@ const app = (function() {
     }
   })
   
-  dropDownContainer.addEventListener("mouseout", (e) => {
-    if (e.target === dropDownContainer) removeDropDown();
+  dropDownContainer.addEventListener("mouseleave", (e) => {
+    removeDropDown();
   })
 
   const enableDropDown = function() {
@@ -28,11 +28,16 @@ const app = (function() {
 
   const renderDropDownContent = function(content) {
     const gamingContent = `
-      <div class="child">
+    <div class="gamingDropDown">
+    <div class="child">
+      <h4>Apparel</h4>
       <ul class="apparel">
         <li>T-shirts</li>
         <li>Hats</li>
       </ul>
+    </div>
+    <div class="child">
+      <h4>Gaming Accessories</h4>
       <ul class="gaming-accessories">
         <li>Digital Eyewear</li>
         <li>Flight Simulation</li>
@@ -42,23 +47,35 @@ const app = (function() {
         <li>Streaming Gear</li>
         <li>Video Capture</li>
       </ul>
+    </div>
+    <div class="child">
+      <h4>Gaming Furniture</h4>
       <ul class="gaming-furniture">
         <li>Floor Mats</li>
         <li>Gaming Chairs</li>
         <li>Gaming Desks</li>
       </ul>
+    </div>
+    <div class="child">
+      <h4>Virtual Reality</h4>
       <ul class="virtual-reality">
         <li>Headsets</li>
         <li>Accessories</li>
       </ul>
     </div>
+  </div>
   `;
+  const notebookContent = ``;
+  const componentsContent = ``;
   switch (content) {
     case "gaming":
       dropDownContainer.innerHTML = gamingContent;
       break;
-  }
-
+    case "notebook":
+      break;
+    case "components":
+      break;
+  } 
   }
 })();
 

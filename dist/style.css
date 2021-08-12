@@ -32,7 +32,6 @@ nav {
 nav ul {
   display: flex;
   height: 100%;
-
 }
 
 nav ul:first-child {
@@ -67,8 +66,10 @@ nav li:hover {
   min-height: 250px;
   height: auto;
   margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(7, 7, 7, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  color: white;
+  font-family: var(--font-family);
 }
 
 li {
@@ -78,4 +79,30 @@ li {
 .show {
   opacity: 1;
   pointer-events: auto;
+}
+
+.gamingDropDown {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.child {
+  margin-right: 200px;
+}
+
+.child li {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.child li:hover {
+  cursor: pointer;
+}
+
+.child h4 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 6px;
 }
