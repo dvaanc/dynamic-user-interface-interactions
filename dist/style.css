@@ -9,8 +9,14 @@
 
 :root {
   --font-family: 'Ubuntu', 'Lobster', 'sans-serif';
-
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -40,10 +46,36 @@ nav li {
   height: 100%;
   border-right: 3px solid rgba(255, 255, 255, 0.5);
   font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: bold;
   color: rgb(255, 255, 255);
 }
 
 nav li:hover {
   background-color: #8B0B0B;
   cursor: pointer;
+}
+
+.drop-down-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  opacity: 0;
+  pointer-events: none;
+  width: 80%;
+  min-height: 250px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(7, 7, 7, 0.5);
+}
+
+li {
+  list-style-type: none;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
 }
