@@ -6,6 +6,32 @@ const app = (function() {
   const gaming = document.querySelector("#gaming");
   const notebooks = document.querySelector("#notebooks");
   const components = document.querySelector("#components");
+  const mobileNav = document.querySelector(".mobile-nav");
+  const modalContainer = document.querySelector(".mobile-modal-container");
+  const modalContent = document.querySelector(".mobile-modal-content");
+  const closeModal = document.querySelector(".modal-container-close");
+
+  const mobileGaming = document.querySelector("#mobile-gaming");
+  const mobileGamingDropDown = document.querySelector("#mob-gaming-dropdown");
+  const mobileNotebooks = document.querySelector("#mobile-notebooks");
+  const mobileNotebooksDropDown = document.querySelector("#mob-notebooks-dropdown");
+  const mobileComponents = document.querySelector("#mobile-components");
+  const mobileComponentsDropDown = document.querySelector("#mob-components-dropdown");
+
+  mobileNav.addEventListener("click", (e) => {
+    modalContainer.classList.add("show");
+  })
+
+  modalContent.addEventListener("click", (e) => {
+    if(e.target === mobileGaming) mobileGamingDropDown.classList.toggle("toggle-dropdown-menu");
+    if(e.target === mobileNotebooks) mobileNotebooksDropDown.classList.toggle("toggle-dropdown-menu");
+    if (e.target === mobileComponents) mobileComponentsDropDown.classList.toggle("toggle-dropdown-menu")
+  })
+
+  modalContainer.addEventListener("click", (e) => {
+    if(e.target === modalContainer) modalContainer.classList.remove("show");
+    if(e.target === closeModal || e.target.parentNode == closeModal) modalContainer.classList.remove('show');
+  })
 
   navBar.addEventListener("mouseover", (e) => {
     if(e.target === gaming) {
