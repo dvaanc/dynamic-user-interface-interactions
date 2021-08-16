@@ -262,7 +262,7 @@ const app = (function() {
   const forwards = document.querySelector("#forwards");
   const images = Array.from(document.querySelectorAll(".image"));
   let imageNumber = 0;
-  images[imageNumber].classList.add("image-show")
+  images[imageNumber].classList.add("image-show");
 
   backwards.addEventListener("click", (e) => {
     imageNumber--;
@@ -270,35 +270,15 @@ const app = (function() {
     console.log(imageNumber);
   })
 
- 
   forwards.addEventListener("click", (e) => {
     imageNumber++;
     imageSlider(imageNumber);
     console.log(imageNumber);
   })
  
-
   const imageSlider = function(number) {
-    if(imageNumber > 4) {
-      imageNumber = 0
-    }
-    if(imageNumber < 0) {
-      imageNumber = 4
-    }
-
-    // switch (direction) {
-    //   case "forwards":
-    //     hideImage(imageNumber);
-    //     imageNumber++;
-    //     console.log(imageNumber);
-    //     // displayImage(imageNumber);
-    //     break;
-    //   case "backwards":
-    //     hideImage(imageNumber);
-    //     imageNumber--;
-    //     // displayImage(imageNumber);
-    //     break;
-    // }
+    if(imageNumber > 4) imageNumber = 0;
+    if(imageNumber < 0) imageNumber = 4;
     for(const elem in images) images[elem].classList.remove("image-show");
     images[imageNumber].classList.add("image-show");
   }
