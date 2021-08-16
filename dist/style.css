@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -263,4 +264,59 @@ li {
   .mobile-nav {
     display: flex;
   }
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 70%;
+  background-color: #333333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.image-slider {
+  height: 90%;
+  width: 90%;
+  background-color: #8B0B0B;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+}
+
+.chevron:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.image-slider li {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image {
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  max-width: 100%;
+  max-height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.image-show {
+  opacity: 1;
+  pointer-events: auto;
 }

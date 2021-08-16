@@ -18,6 +18,8 @@ const app = (function() {
   const mobileComponents = document.querySelector("#mobile-components");
   const mobileComponentsDropDown = document.querySelector("#mob-components-dropdown");
 
+
+
   mobileNav.addEventListener("click", (e) => {
     modalContainer.classList.add("show");
   })
@@ -254,6 +256,51 @@ const app = (function() {
   const setContent = function(contentType) {
     dropDownContainer.innerHTML = '';
     dropDownContainer.innerHTML = contentType
+  }
+
+  const backwards = document.querySelector("#backwards");
+  const forwards = document.querySelector("#forwards");
+  const images = Array.from(document.querySelectorAll(".image"));
+  let imageNumber = 0;
+  images[imageNumber].classList.add("image-show")
+
+  backwards.addEventListener("click", (e) => {
+    imageNumber--;
+    imageSlider(imageNumber);
+    console.log(imageNumber);
+  })
+
+ 
+  forwards.addEventListener("click", (e) => {
+    imageNumber++;
+    imageSlider(imageNumber);
+    console.log(imageNumber);
+  })
+ 
+
+  const imageSlider = function(number) {
+    if(imageNumber > 4) {
+      imageNumber = 0
+    }
+    if(imageNumber < 0) {
+      imageNumber = 4
+    }
+
+    // switch (direction) {
+    //   case "forwards":
+    //     hideImage(imageNumber);
+    //     imageNumber++;
+    //     console.log(imageNumber);
+    //     // displayImage(imageNumber);
+    //     break;
+    //   case "backwards":
+    //     hideImage(imageNumber);
+    //     imageNumber--;
+    //     // displayImage(imageNumber);
+    //     break;
+    // }
+    for(const elem in images) images[elem].classList.remove("image-show");
+    images[imageNumber].classList.add("image-show");
   }
 
 })();
